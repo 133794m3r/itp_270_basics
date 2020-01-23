@@ -146,9 +146,10 @@ def full_shift_test_all():
 		else:
 			#same thing here but this time we're formatting it to add a padding character if the number is less than 2 digits.
 			#we print that it passed.
-			print("\nCT:{1} \nPT:{0}".format(plain_text,cipher_text))
-			print("Key {:>2} : Passed:[X] Failed:[ ]".format(i))		
+			print("\nKey {:>2} : Passed:[X] Failed:[ ]".format(i))
+			print("CT:{1} \nPT:{0}\n".format(plain_text,cipher_text))
 		i-=1
+	print("All tests have passed!")		
 	
 if __name__ == "__main__":
 	full_shift_test_all()

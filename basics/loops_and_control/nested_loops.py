@@ -70,6 +70,7 @@ except ValueError as ve:
 #this is a bunch of printable characters so that if the user enters a number
 #that is between 1 and 64 we an print all of the characters.
 characters='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!-';
+total_chars=0
 #we get all values in the range of 0-10
 for i in range(numbers):
 	#make sure to clear the string again.
@@ -77,7 +78,8 @@ for i in range(numbers):
 
 	for j in range(numbers-i):
 		string+=' '
-
+		
+	total_chars+=(j+1)
 	#set j to zero again.
 	j=0
 	#set our character to the character pointed to by i.
@@ -87,9 +89,9 @@ for i in range(numbers):
 	for  j in range(i*2+1):
 		#append the number i(as a string) to the string.
 		string+=character
-		#increment j by 1.
-		j+=1
-	
+
+	total_chars+=(j+1)
+
 	#print our output string.
 	print(string)
 
@@ -99,6 +101,8 @@ string=''
 #then I set j to be i*2 plus 2(since we have no spaces this time so we have to 
 #add 2 extra characters.
 j=(i*2)+2
+
+total_chars+=(j+1)
 #we set it to the next character.
 character=characters[i+1]
 #we loop until j becomes 0.
@@ -120,7 +124,8 @@ while i >= 0:
 	character=characters[i]
 	#set j to be the amoutn of numbers minus the current i.
 	j=(numbers - i )
-	#loop through it until i is 0.
+	total_chars+=j
+	#loop through it until j is 0.
 	while j>0:
 		#append a space to teh string.
 		string+=' '
@@ -129,6 +134,7 @@ while i >= 0:
 	
 	#set j to i*2 so that we can draw the bottom half of the diamond.
 	j=(i*2)
+	total_chars+=j+1
 	#do this while j is greater than or equal to 0.
 	while j>=0:
 		#append this character to the string j times.
@@ -138,6 +144,9 @@ while i >= 0:
 	
 	#do the same but this time with i.
 	i-=1
+
+
 	#print this new string to the terminal.
 	print(string)
-	
+
+print('\nIn total we used',total_chars+(numbers*2),'characters to make our diamond.')

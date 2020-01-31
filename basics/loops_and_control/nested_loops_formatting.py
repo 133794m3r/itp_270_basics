@@ -74,27 +74,28 @@ characters='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!-';
 for i in range(numbers):
 	#make sure to clear the string again.
 	string='';
-	if i <numbers:
-		string=' '*(numbers -i)
+	for j in range(numbers-i):
+		string+=' '
 	#set j to zero again.
-	j=0
+
 	#set our character to the character pointed to by i.
 	character=characters[i]
 	#print our output string.
 	string+=character
 	print(string)
+	
+print(characters[i+1])
 #this time we're making the second half of it. So we're counting down instead of up.
 while i >= 0:
 	#clear the string again.
 	string='';
-	#set j to i*2 so that we can draw the bottom half of the diamond.
-	j=(i*2)
 	#set character to the character in our table pointed to by i.
 	character=characters[i]
-	#if i is less than numbers then we add the total numbers minus i spaces
-	#to the beginning of our string.
-	if i <numbers:
-		string=' '*(numbers -i)	
+	j=(numbers - i )
+	while j>0:
+		string+=' '
+		j-=1
+
 	string+=character
 	i-=1
 	#print this new string to the terminal.

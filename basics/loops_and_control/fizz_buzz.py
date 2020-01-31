@@ -42,30 +42,33 @@ if you're counting from  1 to 10 and set the maximum to 10 it'd stop at 9.
 maximum=maximum+1
 
 for number in range(start,maximum):
-	'''
-	the % operator is called the modulus operator. 
-	It'll return the remainder of any division operation.
-	For example 5 % 3 = 2. Because 3 goes into 5 1 time. With a remainder of 2.
-'''
-	#if the number is divisible by 30 evenly.
-	if number % 30 == 0:
-		#print Foo.
-		print("Foo")
-		#increment this variable 1.
-		divisible_by_30+=1
-		#same as above but this time with the number 5.
-	elif number % 5 == 0:
-		print("Bar")
-		divisible_by_5+=1
-	elif number % 3 == 0:
-		print("Fizz")
-		divisible_by_3+=1
-	elif number % 2 == 0:
-		print("Buzz")
-		divisible_by_2+=1
-	#if none of the other tests pass we print Bazz.
-	else:
-		print("Bazz")
+	#this is here so that we make sure to _not_ count the number zero because
+	#zero divided by any number is zero. Thus we'll get a false positive.
+	if number > 0:
+		'''
+		the % operator is called the modulus operator. 
+		It'll return the remainder of any division operation.
+		For example 5 % 3 = 2. Because 3 goes into 5 1 time. With a remainder of 2.
+		'''	
+		#if the number is divisible by 30 evenly.
+		if number % 30 == 0:
+			#print Foo.
+			print("Foo")
+			#increment this variable 1.
+			divisible_by_30+=1
+			#same as above but this time with the number 5.
+		elif number % 5 == 0:
+			print("Bar")
+			divisible_by_5+=1
+		elif number % 3 == 0:
+			print("Fizz")
+			divisible_by_3+=1
+		elif number % 2 == 0:
+			print("Buzz")
+			divisible_by_2+=1
+		#if none of the other tests pass we print Bazz.
+		else:
+			print("Bazz")
 #now we print the values and our totals.
 print("In total all numbers up to your number {}.".format(number))
 print("Had {} numbers that were divisible by 30.".format(divisible_by_30))

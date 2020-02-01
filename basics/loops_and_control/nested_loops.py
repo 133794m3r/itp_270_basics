@@ -40,7 +40,7 @@ j=0;
 character=''
 #here this is a varaible so that the next line can be commented out and the user 
 #can speify the number to use.
-numbers=10
+numbers=3
 '''
 #Put a # before the line above to make the rest of this code work.
 #it's completely optional.
@@ -150,3 +150,5 @@ while i >= 0:
 	print(string)
 
 print('\nIn total we used',total_chars+(numbers*2),'characters to make our diamond.')
+print('Further it took',numbers*2,'lines to make it. Also there were',numbers+1,'unique characters.')
+print('{};{};{}'.format(total_chars,numbers+1,numbers*2))

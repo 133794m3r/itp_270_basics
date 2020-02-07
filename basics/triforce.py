@@ -3,7 +3,7 @@
 string=''
 j=0;
 character=''
-numbers=20
+numbers=10
 characters='#'*64
 #characters='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!-';
 print("Can I haz triforce?!")
@@ -46,7 +46,7 @@ for i in range(numbers):
 		string+=character
 	#quick hack to get total character counts.
 	total_characters+=len(string)
-	#print the generated string.
+	#print the
 	print(string)
 
 string=''

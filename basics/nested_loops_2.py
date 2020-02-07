@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 '''
 Double nested loops.
 Will print the following pattern.
@@ -7,33 +6,31 @@ By Macarthur Inbody
 2020 - AGPLv3.
 
           0
-         1
-        2
-       3
-      4
-     5
-    6
-   7
-  8
- 9
-a
- 9
-  8
-   7
-    6
-     5
-      4
-       3
-        2
-         1
+         111
+        22222
+       3333333
+      444444444
+     55555555555
+    6666666666666
+   777777777777777
+  88888888888888888
+ 9999999999999999999
+aaaaaaaaaaaaaaaaaaaaa
+ 9999999999999999999
+  88888888888888888
+   777777777777777
+    6666666666666
+     55555555555
+      444444444
+       3333333
+        22222
+         111
           0
 
 
 
 
-This will print out the text above if the value 10 is given for the number of elements
-that we'll be doing for each half. Basially it'll show that each line is indendented
-by one less space as we go down the lines for the first half until we're at one. Then we 
+Now it's a perfect diamond.
 
 '''
 #our initial string.
@@ -57,7 +54,7 @@ try:
 	if numbers <=0:
 		#we raise a value error because they didn't follow instructions.
 		raise ValueError("Please enter a number greater than zero.")
-	elif numbers >64:
+	elif numbers >63:
 		raise ValueError("Your number is too large.")
 #our exception handler.
 except ValueError as ve:
@@ -68,37 +65,74 @@ except ValueError as ve:
 #if all went well then we continue with the program.
 #place a # right before the line below to make it work properly too.
 '''
+
 #this is a bunch of printable characters so that if the user enters a number
 #that is between 1 and 64 we an print all of the characters.
 characters='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!-';
-#we get all values in the range of 0-10
-for i in range(numbers):
-	#make sure to clear the string again.
-	string='';
-	for j in range(numbers-i):
-		string+=' '
-	#set j to zero again.
+total_chars=0
 
-	#set our character to the character pointed to by i.
+for i in range(numbers):
+	string=''
 	character=characters[i]
-	#print our output string.
-	string+=character
-	print(string)
+
+	string=''
+
+	for j in range(numbers - i):
+		string+=' '
+
+	for j in range(i*2+1):
+		string+=character
+
+	string+=' '
+	for j in range((numbers -i) *2 ):
+		string+=' '
+
+#	for j in range(numbers -i ):
+#		string+=' '
 	
-print(characters[i+1])
-#this time we're making the second half of it. So we're counting down instead of up.
-while i >= 0:
-	#clear the string again.
-	string='';
-	#set character to the character in our table pointed to by i.
+	for j in range(i*2+1):
+		string+=character
+	total_chars+=len(string)
+	print(string)
+string=''
+character=characters[i+1]
+for j in range(i*2+3):
+	string+=character
+
+string+=' '
+
+for j in range(i*2+3):
+	string+=character
+
+total_chars+=len(string)
+print(string)
+
+while i>=0:
+	string=''
 	character=characters[i]
 	j=(numbers - i )
-	while j>0:
+	
+	while j > 0:
+		string+=' '
+		j-=1
+	
+	j=(i*2)
+	while j >=0:
+		string+=character
+		j-=1
+	
+	j=(numbers -i )*2
+	while j >= 0:
 		string+=' '
 		j-=1
 
-	string+=character
+	j = (i*2)
+	while j >=0:
+		string+=character
+		j-=1
 	i-=1
-	#print this new string to the terminal.
+	total_chars+=len(string)
 	print(string)
-	
+
+print("\nIn total to make the 2 triangles we used",total_chars,"to make 2 diamonds that were",(numbers*2)+1,"lines each.\nAlso we used",numbers+1,"unique characters.")
+print('{0};{2};{1}'.format(total_chars,(numbers*2)+1,numbers+2))

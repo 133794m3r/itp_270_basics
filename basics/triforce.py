@@ -3,9 +3,9 @@
 string=''
 j=0;
 character=''
-numbers=10
-characters='#'*64
-#characters='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!-';
+numbers=int(input("Enter how many lines for each triangle: "))
+#characters='#'*64
+characters='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!-';
 print("Can I haz triforce?!")
 total_characters=0
 #draw top triangle.

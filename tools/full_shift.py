@@ -82,7 +82,7 @@ def encrypt(input_string,shift):
 			if code_point > 126:
 				#OK so we need to get the distance from printable we need to use to wrap around.
 				#Basically it'll return a value between 32 to 126
-				code_point = 32 + (code_point - 126);
+				code_point = 32 + (code_point - 127);
 		if mode == 1:
 			shift=key[i]
 			i=( i+1 if i < key_len else 0)
@@ -130,7 +130,7 @@ def decrypt(input_string,shift):
 				set the code point as 126(maximum ascii value) minus 32(minium) - 
 				our current code point. Then subtract that value from 126.
 				'''			
-				code_point = 126 - ( 32 - code_point)
+				code_point = 127 - ( 32 - code_point)
 		if mode == 1:
 			shift=key[i]
 			i=( i+1 if i < key_len else 0)				

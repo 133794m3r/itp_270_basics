@@ -1,4 +1,4 @@
-'''
+"""
 Double nested loops.
 Will print the following pattern.
 
@@ -32,7 +32,7 @@ aaaaaaaaaaaaaaaaaaaaa
 
 Now it's a perfect diamond.
 
-'''
+"""
 #our initial string.
 string=''
 j=0;
@@ -40,7 +40,7 @@ character=''
 #here this is a varaible so that the next line can be commented out and the user 
 #can speify the number to use.
 numbers=10
-'''
+"""
 #Put a # before the line above to make the rest of this code work.
 #it's completely optional.
 
@@ -64,7 +64,7 @@ except ValueError as ve:
 	raise ve
 #if all went well then we continue with the program.
 #place a # right before the line below to make it work properly too.
-'''
+"""
 
 #this is a bunch of printable characters so that if the user enters a number
 #that is between 1 and 64 we an print all of the characters.

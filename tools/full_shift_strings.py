@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-'''
+"""
 This is a Full Shift Cipher that prompts the user for a string, key, and mode and then carries out encryption or decryption on the string.
 
 Author: Ritchie Deel
@@ -14,7 +14,7 @@ Now it does the full "printable" ASCII characterset.
 Version 1.3
 Now it encipher function is a generic one that takes any symbol set or length of symbols. Also there's some 
 docstrings included for each function making it showup with help(<FUNCTION_NAME>) or if it's called like <FUNCTION_NAME>.__doc__
-'''
+"""
 
 
 #The behavior below of defining global variables isn't recommended but since this is a global module it's fine for right now.
@@ -50,14 +50,14 @@ def main():
 
 	# Whether the program will encrypt or decrypt the string:
 	mode = input('Enter the mode (encrypt or decrypt): ')
-	'''
+	"""
 	Then we pass our arguments to the program so that it can then encrypt/decrypt it for us.
 	We pass the message, the key, the SYMBOLS we're using and also the TOTAL_SYMBOLS
 	This way if we want to re-use the program below for plain-old Ceaser(A-Za-z) we can pass it the new
 	symbols and the total length of those and it'll work just fine w/o any extra work.
 	All the end user has to do is modify the SYMBOLS variable at the top of this function and
 	it'll work with any characterset.
-	'''
+	"""
 	translated=encipher(message,key,mode,SYMBOLS,TOTAL_SYMBOLS)
 	# Output the translated string:
 	print(translated)
@@ -116,10 +116,10 @@ def encipher(message,key,mode,SYMBOLS,TOTAL_SYMBOLS=0):
 	#return the translated string.
 	return translated
 
-'''
+"""
 The folllowing function just does the enciphering/deciphering in one loop all at once.
 This is another way to write your tests.
-'''
+"""
 def test_gauntlet(symbols=None,total=None):
 	if symbols is None:
 		symbols=SYMBOLS
@@ -155,13 +155,13 @@ def test_gauntlet(symbols=None,total=None):
 		if plain_text != original_text:
 			#if they're not. We throw this little message.
 			print("Key {} : Passed:[ ] Failed:[X]".format(i))		
-			'''
+			"""
 			Then we raise an assertion error because our code failed.
 			First the format paramters are positional. {0} = first argument, {1} = second etc.
 			Then we add it to our string.
 			And we make sure that the key string we insert is padded to two characters. This is the new
 			and "PEP8" way of doing it. % is the old way.
-			'''
+			"""
 			raise AssertionError("Your code's broke with the key:{:>2}. We got back {0} but expected {1} and the cipher text is '{3}'".format(plain_text,original_text,i,cipher_text))
 		#otherwise it worked.
 		else:

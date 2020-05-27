@@ -1,9 +1,9 @@
 #!/bin/python3
-"""
+'''
 Full ASCII Shift Cipher
 By Macarthur Inbody AGPLv3
 2020 - :
-"""
+'''
 
 def get_input(operand,list_mode=0):
 	"""
@@ -66,10 +66,10 @@ def encrypt(input_string,shift):
 		key_len=len(key)-1
 		shift=key[0]
 		mode=1
-	"""
+	'''
 	This for loop goes through each character of the string and does all of the code below.
 	This will get each character seperately as it's own item. This also works for lists.
-	"""
+	'''
 	for char in input_string:
 		#we set our codepoint to the ordinal(ASCII) value of that character and the shift value.	
 		code_point=ord(char)
@@ -82,7 +82,7 @@ def encrypt(input_string,shift):
 			if code_point > 126:
 				#OK so we need to get the distance from printable we need to use to wrap around.
 				#Basically it'll return a value between 32 to 126
-				code_point = 32 + (code_point - 126);
+				code_point = 32 + (code_point - 127);
 		if mode == 1:
 			shift=key[i]
 			i=( i+1 if i < key_len else 0)
@@ -126,11 +126,11 @@ def decrypt(input_string,shift):
 			code_point-=shift
 			#if it's less than 32(space character) we have to wrap around.
 			if code_point <32:
-				"""
+				'''
 				set the code point as 126(maximum ascii value) minus 32(minium) - 
-				our current code point. Then subtract that value from 126.
-				"""			
-				code_point = 126 - ( 32 - code_point)
+				our current code point. Then subtract that value from 127.
+				'''			
+				code_point = 127 - ( 32 - code_point)
 		if mode == 1:
 			shift=key[i]
 			i=( i+1 if i < key_len else 0)				
@@ -142,12 +142,12 @@ def decrypt(input_string,shift):
 
 def main():
 	#print our menu.
-	print("""Shift Cipher encoder/decoder.
+	print('''Shift Cipher encoder/decoder.
 1) Encrypt
 2) Decrypt
 3) Encrypt(with list of shifts)
 4) Decrypt(with list of shifts)
-""")
+''')
 	result="";
 	mode=0
 #while loop to make sure they give us valid input.
@@ -194,13 +194,13 @@ def full_shift_test_all_single():
 		if plain_text != original_text:
 			#if they're not. We throw this little message.
 			print("Key {} : Passed:[ ] Failed:[X]".format(i))		
-			"""
+			'''
 			Then we raise an assertion error because our code failed.
 			First the format paramters are positional. {0} = first argument, {1} = second etc.
 			Then we add it to our string.
 			And we make sure that the key string we insert is padded to two characters. This is the new
 			and "PEP8" way of doing it. % is the old way.
-			"""
+			'''
 			raise AssertionError("Your code's broke with the key:{2:>2}. We got back \n{0}\n but expected \n{1} \nand the cipher text is '{3}'".format(plain_text,original_text,i,cipher_text))
 		#otherwise it worked.
 		else:
@@ -224,13 +224,13 @@ def full_shift_test_all_multi():
 		if plain_text != original_text:
 			#if they're not. We throw this little message.
 			print("Key {} : Passed:[ ] Failed:[X]".format(shift))
-			"""
+			'''
 			Then we raise an assertion error because our code failed.
 			First the format paramters are positional. {0} = first argument, {1} = second etc.
 			Then we add it to our string.
 			And we make sure that the key string we insert is padded to two characters. This is the new
 			and "PEP8" way of doing it. % is the old way.
-			"""
+			'''
 			raise AssertionError("Your code's broke with the key:{2:>2}. We got back \n{0}\n but expected \n{1} \nand the cipher text is '{3}'".format(plain_text,original_text,shift,cipher_text))
 		#otherwise it worked.
 		else:
@@ -245,3 +245,4 @@ if __name__ == "__main__":
 	#full_shift_test_all_single()
 	#full_shift_test_all_multi()
 	main()
+

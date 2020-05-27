@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-'''
+"""
 Double nested loops.
 Will print the following pattern.
 
@@ -35,7 +35,7 @@ This will print out the text above if the value 10 is given for the number of el
 that we'll be doing for each half. Basially it'll show that each line is indendented
 by one less space as we go down the lines for the first half until we're at one. Then we 
 
-'''
+"""
 #our initial string.
 string=''
 j=0;
@@ -43,7 +43,7 @@ character=''
 #here this is a varaible so that the next line can be commented out and the user 
 #can speify the number to use.
 numbers=10
-'''
+"""
 #Put a # before the line above to make the rest of this code work.
 #it's completely optional.
 
@@ -67,7 +67,7 @@ except ValueError as ve:
 	raise ve
 #if all went well then we continue with the program.
 #place a # right before the line below to make it work properly too.
-'''
+"""
 #this is a bunch of printable characters so that if the user enters a number
 #that is between 1 and 64 we an print all of the characters.
 characters='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!-';

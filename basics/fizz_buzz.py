@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-'''
+"""
 FizzBuzz Program
 By Macarthur Inbody
 2020- AGPLv3
 Teaches the basics of a loop and also multiple conditionals.
-'''
+"""
 #ask the user for what i we should start counting from.
 start=input("Enter a number to start counting from(press enter for 0): ")
 #if they hit enter and we have no result assume they didn't want to specify one.
@@ -24,7 +24,7 @@ divisible_by_6=0
 divisible_by_3=0
 divisible_by_2=0
 non=0;
-'''
+"""
 this is a for loop.
 What it'll do is the following.
 Python will generate a list of is that are between start and maximum+1
@@ -40,18 +40,18 @@ We set maximum to one more than what we were given because otherwise it counts u
 i without including it. And most people who are told to count to 10 count up to 10
 and include 10 in their counting. they don't stop at 9(as python would 
 if you're counting from  1 to 10 and set the maximum to 10 it'd stop at 9.
-'''
+"""
 maximum=maximum
 
 for i in range(start,maximum):
 	#this is here so that we make sure to _not_ count the i zero because
 	#zero divided by any i is zero. Thus we'll get a false positive.
 	if i != 0:
-		'''
+		"""
 		the % operator is called the modulus operator. 
 		It'll return the remainder of any division operation.
 		For example 5 % 3 = 2. Because 3 goes into 5 1 time. With a remainder of 2.
-		'''	
+		"""	
 		#if the i is divisible by 30 evenly.
 		if i % 30 == 0:
 			#print Foo.

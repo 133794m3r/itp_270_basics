@@ -16,7 +16,7 @@ total_characters=0
 #draw top triangle.
 #Also to make it centered I am shifting it to the right by 2*number_of_lines - current_line
 #so that it looks like this.
-'''
+"""
        #
       ###
      #####
@@ -25,7 +25,7 @@ total_characters=0
   ###     ###
  #####   #####
 ####### #######
-'''
+"""
 #I am doing all of the lines of characters.
 for i in range(numbers+1):
 	#select the chracter from the character list.

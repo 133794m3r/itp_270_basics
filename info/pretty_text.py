@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-'''
+"""
 This script will test if the system supports all of the different colors and
 text options by printing them out in groups with a tab separating them.
-'''
+"""
 def test_formatting():
 	clear='\033[0m'
 	i=0;

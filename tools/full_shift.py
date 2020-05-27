@@ -128,7 +128,7 @@ def decrypt(input_string,shift):
 			if code_point <32:
 				'''
 				set the code point as 126(maximum ascii value) minus 32(minium) - 
-				our current code point. Then subtract that value from 126.
+				our current code point. Then subtract that value from 127.
 				'''			
 				code_point = 127 - ( 32 - code_point)
 		if mode == 1:

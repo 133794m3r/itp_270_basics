@@ -14,6 +14,7 @@ So for bold would be \033[1m.
 
 21 = Reset Bold
 22 = Reset Dim
+23 = Reset Italic
 24 = Reset Underline
 25 = Reset Blink
 27 = Reset Reverse

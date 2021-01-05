@@ -12,7 +12,7 @@ Should just have an init method, and maybe a way to print it's properties.
 """
 
 """
-Theater Class holds all of the movies.
+MovieTheater Class holds all of the movies.
 
 Properties
 movies is a dict that contains a collection of Movie objects.
@@ -63,7 +63,7 @@ class Movie:
 		pass
 
 
-class Theater:
+class MovieTheater:
 	movies = []
 
 	def __init__(self):

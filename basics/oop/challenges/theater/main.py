@@ -1,4 +1,4 @@
-from movies import Movie, Theater
+from movies import Movie, MovieTheater
 
 
 """
@@ -17,7 +17,7 @@ movie_theater.print_sales()
 
 That's it. GOOD LUCK!
 """
-movie_theater = Theater()
+movie_theater = MovieTheater()
 def main():
 	pass
 

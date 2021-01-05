@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 
 string=''
-j=0;
+j=0
 character=''
 numbers=10
 
 characters='#'*64
-#characters='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!-';
+#characters='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!-'
 number_i=0
 
 #this line is to make the text colored yellow.

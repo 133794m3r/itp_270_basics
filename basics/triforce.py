@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 
 string=''
-j=0;
+j=0
 character=''
 numbers=int(input("Enter how many lines for each triangle: "))
 #characters='#'*64
-characters='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!-';
+characters='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!-'
 print("Can I haz triforce?!")
 total_characters=0
 #draw top triangle.

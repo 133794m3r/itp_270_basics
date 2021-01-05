@@ -1,6 +1,6 @@
 numbers=10
 #characters='#'*64
-characters='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!-';
+characters='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!-'
 number_i=0
 print("\033[93mCan I haz Trifroce of Courage?!\033[32;1m")
 for i in range(numbers+1):

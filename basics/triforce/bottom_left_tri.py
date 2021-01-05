@@ -1,6 +1,6 @@
 numbers=10
 #characters='#'*64
-characters='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!-';
+characters='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!-'
 number_i=0
 #this line is to make the text colored yellow.
 print("\033[93mCan I haz Triforce of Wisdom?!\033[34;1m")

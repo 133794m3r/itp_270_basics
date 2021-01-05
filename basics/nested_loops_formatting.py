@@ -38,7 +38,7 @@ by one less space as we go down the lines for the first half until we're at one.
 """
 #our initial string.
 string=''
-j=0;
+j=0
 character=''
 #here this is a varaible so that the next line can be commented out and the user 
 #can speify the number to use.
@@ -70,11 +70,11 @@ except ValueError as ve:
 """
 #this is a bunch of printable characters so that if the user enters a number
 #that is between 1 and 64 we an print all of the characters.
-characters='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!-';
+characters='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!-'
 #we get all values in the range of 0-10
 for i in range(numbers):
 	#make sure to clear the string again.
-	string='';
+	string=''
 	for j in range(numbers-i):
 		string+=' '
 	#set j to zero again.
@@ -92,12 +92,12 @@ for i in range(numbers):
 string=characters[i+1]
 for j in range(i*2+1):
 	string+=' '
-string+=characters[i+1];
+string+=characters[i+1]
 print(string)
 #this time we're making the second half of it. So we're counting down instead of up.
 while i >= 0:
 	#clear the string again.
-	string='';
+	string=''
 	#set character to the character in our table pointed to by i.
 	character=characters[i]
 	j=(numbers - i )

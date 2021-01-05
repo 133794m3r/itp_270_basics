@@ -19,11 +19,11 @@ def rand(min,max):
 # Here's the main function that handles the number guessing. It keeps going and gives them hints.
 def guesser(min,max):
     # I initialize the value to 0.
-    num=0;
+    num=0
     # The correct answer is a random number in the range given to this function.
     ans=rand(min,max)
     # The guesses counter.
-    guesses=0;
+    guesses=0
     # This tells them the range of numbers they're guessing.
     # The {} tells python that when format is passed to it to put the variable passed to it from format
     # into the function.
@@ -55,7 +55,7 @@ def guesser(min,max):
 # The primary function that handles the number guessing and seeing if the user is done.    
 def number_guesser(min,max):
     loop=True
-    response='';
+    response=''
     #another loop, while the variable loop is true we keep on going.
     while loop == True:
         #run the guesser program with our min and max variables.

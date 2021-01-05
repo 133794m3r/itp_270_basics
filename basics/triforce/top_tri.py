@@ -1,6 +1,6 @@
 numbers=10
 #characters='#'*64
-characters='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!-';
+characters='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!-'
 number_i=0
 
 #this line is to make the text colored yellow.
@@ -18,4 +18,4 @@ for i in range(numbers+1):
 	#print the string.
 	print(string)
 
-print("\033[0m");
+print("\033[0m")

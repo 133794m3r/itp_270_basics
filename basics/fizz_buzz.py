@@ -23,7 +23,7 @@ divisible_by_5=0
 divisible_by_6=0
 divisible_by_3=0
 divisible_by_2=0
-non=0;
+non=0
 """
 this is a for loop.
 What it'll do is the following.
@@ -64,7 +64,7 @@ for i in range(start,maximum):
 			
 			#same as above but this time with the i 5.
 		elif i % 6 == 0:
-			print(i,"FizzBuzz");
+			print(i,"FizzBuzz")
 			divisible_by_6+=1
 			divisible_by_3+=1
 			divisible_by_2+=1

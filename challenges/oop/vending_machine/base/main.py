@@ -1,6 +1,27 @@
 #!/bin/env python3
-from vending_machine import VendingMachine
+from vending_machine import VendingMachine, Item
 
+def get_int(prefix):
+	while True:
+		try:
+			result = int(input(prefix))
+			break
+		except ValueError:
+			print("Enter a valid number")
+	return result
+
+def get_location(prefix):
+	while True:
+		result = input(prefix)
+		if len(result) == 2:
+			if result[0].isalpha and result[1].isnumeric():
+				tmp = result[0].upper()+result[1]
+				result = tmp
+			break
+		else:
+			print("Enter valid location! Format EX: Z0")
+
+	return result
 """
 Challenge is as follows.
 1) Print all items in the vending machine.
@@ -20,7 +41,7 @@ BONUSES
 """
 
 def main():
-	machine = VendingMachine
+	machine = VendingMachine()
 	pass
 
 

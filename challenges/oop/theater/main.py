@@ -5,7 +5,7 @@ from movies import Movie, MovieTheater
 This program should just use the methods above. No real menu is required.
 If you want you can have it prompt the user to purchase tickets then after they type "exit" or something similar print the final results.
 
-If you do a menu, you could use the "list movies" method to get the list of movies then use that to purchase their ticket.
+If you do a menu, you could use the "list movies" method to print a list of the movies. Then modify it to prefix it with a number before each line to say which entry the person selects. Then get the movie at that index and increment the number of tickets sold.
 
 You should have the following items called/utilized in the final code, An example is given below. But you should have at least 2 movies added not including this example.
 

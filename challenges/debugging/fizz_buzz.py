@@ -28,15 +28,16 @@ def fizz_buzz(start:int)->Tuple[int,int,int]:
 	:param end: The integer to count up to(non-inclusive)
 	:return: A tuple containing the number of numbers divisible by 3, 5 and 7 respectively.
 	"""
-	div_3 = 0
-	div_5 = 0
-	div_7 = 0
+	
+	div_3
+	div_5
+	div_7 
 	for i in range(start,end):
-		if i % 3 = 0:
+		elif i % 3 = 0:
 			div_3 += 1
-		if i % 5 = 0:
+		elif i % 5 = 0:
 			div_5 += 1
-		if i % 7 = 0:
+		elif i % 7 = 0:
 			div_7 +=1
 
 	print("Numbers from",start,"to",end,"that are divisible by 3 =",div_3,", 5 =",div_5,", 7 =",div_7)

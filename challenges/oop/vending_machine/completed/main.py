@@ -43,7 +43,7 @@ BONUSES
 def main():
 	machine = VendingMachine()
 	machine.add_item({"item":Item("Ball Bat",100),"num":100})
-	machine.add_item({"item": Item("Ball Bat", 25), "num": 5})
+	machine.add_item({"item": Item("Fruit Candy", 25), "num": 5})
 	all_items = machine.list_items()
 	print(all_items)
 	choice_menu = """
@@ -63,6 +63,9 @@ def main():
 			print(response_str)
 		elif choice == 2:
 			result,response_str = machine.select_item(location)
+			print(response_str)
+		elif choice == 3:
+			response_str = machine.list_items()
 			print(response_str)
 		else:
 			item_str, profit_str = machine.shut_off()

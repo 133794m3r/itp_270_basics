@@ -87,7 +87,7 @@ class VendingMachine:
 		number = self._current_number
 		for item in items:
 			#Get the current letter, and then the number.
-			self._items[chr(letter) + str(number)] = (item['item'], item['num'])
+			self._items[chr(letter) + str(number)] = {'item':item['item'], 'quantity':item['num']}
 			number += 1
 			if number > rows:
 				number = 0
@@ -104,7 +104,7 @@ class VendingMachine:
 		:return: Nothing
 		"""
 
-		self._items[chr(self._current_letter)+str(self._current_number)] = (item['item'], item['num'])
+		self._items[chr(self._current_letter)+str(self._current_number)] = {'item':item['item'], 'quantity':item['num']}
 		if self._current_number + 1 > self._rows:
 			self._current_number = 0
 			self._current_letter += 1
@@ -138,7 +138,7 @@ class VendingMachine:
 		location = location.upper()
 		if self._items.get(location, False):
 			slot =self._items[location]
-			return True,"\r\nCost:{} Quantity Remaining:{}".format(slot[0].get_cost(self._CURRENCY),slot[1])
+			return True,"\r\nCost:{} Quantity Remaining:{}".format(slot['item'].get_cost(self._CURRENCY),slot['quantity'])
 		else:
 			return False, "\r\nLocation '{}' doesn't exist.".format(location)
 
@@ -157,18 +157,20 @@ class VendingMachine:
 		purchase_result = False
 		if self._items.get(location, False):
 			slot = self._items[location]
-			if slot[1] > 0:
-				item_cost = slot[0].cost
+			if slot['quantity'] > 0:
+				item_cost = slot['item'].cost
 				if amt is None:
-					print('Please insert at least {}'.format(slot[0].get_cost(self._CURRENCY)))
+					print('Please insert at least {}'.format(slot['item'].get_cost(self._CURRENCY)))
 					money = get_money(self._CURRENCY)
 				else:
 					money = round(amt*100)/100
 				if money >= item_cost:
 					money -= item_cost
 					self._profit += item_cost
-					result_str = "You purchased {}. ".format(slot[0].name)+ get_change(money)
+					result_str = "You purchased {}. ".format(slot['item'].name)+ get_change(money)
 					purchase_result = True
+					#decreased the number of items by 1.
+					self._items[location]['quantity'] -= 1
 				elif money == 0:
 					result_str = "You didn't even input a single penny!"
 					purchase_result = False
@@ -178,7 +180,7 @@ class VendingMachine:
 				return purchase_result, "\r\n"+result_str
 
 			else:
-				return False, "\r\nItem '{}' is not in stock anymore.".format(slot[0].name)
+				return False, "\r\nItem '{}' is not in stock anymore.".format(slot['item'].name)
 		else:
 			return False, "\r\nAn item doesn't exist at location {}".format(location)
 
@@ -192,11 +194,11 @@ class VendingMachine:
 
 		quantity_str = ''
 		for i,location_entry in enumerate(self._items.items()):
-			item, quantity = location_entry[1]
+			slot = location_entry[1]
 			location = location_entry[0]
 			if i % self._rows == 0 and i >= self._rows:
 				quantity_str += "\r\n"
-			quantity_str += "{}:{} has {} remaining\t".format(location, item.name, quantity)
+			quantity_str += "{}:{} has {} remaining\t".format(location, slot['item'].name, slot['quantity'])
 
 
 		profit_str = f"The machine made {self._CURRENCY}{self._profit}"
@@ -212,12 +214,12 @@ class VendingMachine:
 
 		current_str = ''
 		for i,location_entry in enumerate(self._items.items()):
-			item, _ = location_entry[1]
+			slot = location_entry[1]
 			location = location_entry[0]
 			if i % self._rows == 0 and i >= self._rows:
 				current_str+='\r\n'
 
-			current_str += "{}:{:20}\t".format(location, item.name)
+			current_str += "{}:{:20}\t".format(location,slot['item'].name)
 		return current_str
 
 
